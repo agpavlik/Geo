@@ -6,6 +6,8 @@ import {
   Switch,
 } from "react-router-dom";
 
+import MainNavigation from "./shared/components/Navigation/MainNavigation";
+
 // When the URL changes the 'Redirect' component go through all the routes
 // and see if the path is nothing, render that. If the path is anything else,
 // this will not trigger and instead redirect us back to '/'.
@@ -20,15 +22,18 @@ import NewPlace from "./places/pages/NewPlace";
 const App = () => {
   return (
     <Router>
-      <Switch>
-        <Route path="/" exact>
-          <Users />
-        </Route>
-        <Route path="/places/new" exact>
-          <NewPlace />
-        </Route>
-        <Redirect to="/" />
-      </Switch>
+      <MainNavigation />
+      <main>
+        <Switch>
+          <Route path="/" exact>
+            <Users />
+          </Route>
+          <Route path="/places/new" exact>
+            <NewPlace />
+          </Route>
+          <Redirect to="/" />
+        </Switch>
+      </main>
     </Router>
   );
 };
