@@ -1,4 +1,5 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 import PlaceList from "../components/PlaceList";
 
@@ -32,7 +33,12 @@ const DUMMY_PLACES = [
 ];
 
 const UserPlaces = () => {
-  return <PlaceList items={DUMMY_PLACES} />;
+  // The useParams hook returns an object of key/value pairs of the dynamic params
+  // from the current URL that were matched by the <Route path>.
+  const userId = useParams().userId;
+  // Filter returns a new array of places where creator of that place is equal to user ID.
+  const loadedPlaces = DUMMY_PLACES.filter((place) => place.creator === userId);
+  return <PlaceList items={loadedPlaces} />;
 };
 
 export default UserPlaces;
