@@ -6,6 +6,7 @@ import Card from "../../shared/components/UAElements/Card";
 import "./UsersList.css";
 
 const UsersList = (props) => {
+  // check if there are any users
   if (props.items.length === 0) {
     return (
       <div className="center">
