@@ -1,11 +1,12 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
-import Avatar from "../../shared/components/UAElements/Avatar";
-import Card from "../../shared/components/UAElements/Card";
+import Avatar from "../../shared/components/UIElements/Avatar";
+import Card from "../../shared/components/UIElements/Card";
 
 import "./UserItem.css";
 
+// Using <Link> instead of traditional anchor tags (<a>) ensures that navigation occurs within the React application, allowing for a smoother, single-page application experience.
 const UserItem = (props) => {
   return (
     <li className="user-item">

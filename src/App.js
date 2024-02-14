@@ -8,8 +8,9 @@ import {
 
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 
+// The "Redirect" component allows to make sure that we are not able to end up on unsupported pages
 // When the URL changes the 'Redirect' component go through all the routes
-// and see if the path is nothing, render that. If the path is anything else,
+// and see if the path is '/', render that. If the path is anything else,
 // this will not trigger and instead redirect us back to '/'.
 
 // The 'Switch' component instructs react router that inside of the switch block
