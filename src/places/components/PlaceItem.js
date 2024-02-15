@@ -7,6 +7,7 @@ import Card from "../../shared/components/UIElements/Card";
 import "./PlaceItem.css";
 
 const PlaceItem = (props) => {
+  // Manage modal window
   const [showMap, setShowMap] = useState(false);
 
   const openMapHandler = () => setShowMap(true);

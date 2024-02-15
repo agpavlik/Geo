@@ -12,6 +12,7 @@ import "./Modal.css";
 // Otherwise pass an inline function where get the event and event prevent default to make sure that if
 // we render any buttons inside of the form, we don't accidentally reload the page by triggering form submission.
 
+// This component is not exported but used by Modal
 const ModalOverlay = (props) => {
   const content = (
     <div className={`modal ${props.className}`} style={props.style}>
