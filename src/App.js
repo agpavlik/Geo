@@ -30,7 +30,7 @@ const App = () => {
           <Route path="/" exact>
             <Users />
           </Route>
-          <Route path="/:userId/">
+          <Route path="/:userId/places" exact>
             <UserPlaces />
           </Route>
           <Route path="/places/new" exact>
