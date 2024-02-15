@@ -24,9 +24,9 @@ const inputReducer = (state, action) => {
 const Input = (props) => {
   // Use useReducer instead of several useStates
   const [inputState, dispatch] = useReducer(inputReducer, {
-    value: props.value || "",
+    value: props.initialValue || "",
     isTouched: false,
-    isValid: props.valid || false,
+    isValid: props.initialValid || false,
   });
 
   // Function run some logic (a new value back to the place) whenever the input value or validity changes because
