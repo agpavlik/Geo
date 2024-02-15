@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { useForm } from "../../shared/hooks/form-hook";
@@ -41,24 +41,50 @@ const DUMMY_PLACES = [
 ];
 
 const UpdatePlace = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
   const placeId = useParams().placeId;
+
+  const [formState, inputHandler, setFormData] = useForm(
+    {
+      title: {
+        value: "",
+        isValid: false,
+      },
+      description: {
+        value: "",
+        isValid: false,
+      },
+    },
+    false
+  );
 
   // Find place by id
   const identifiedPlace = DUMMY_PLACES.find((p) => p.id === placeId);
 
-  const [formState, inputHandler] = useForm(
-    {
-      title: {
-        value: identifiedPlace.title,
-        isValid: true,
+  // Update data. usEffect is needed to prevent a rerender and infinite loop.
+  useEffect(() => {
+    setFormData(
+      {
+        title: {
+          value: identifiedPlace.title,
+          isValid: true,
+        },
+        description: {
+          value: identifiedPlace.description,
+          isValid: true,
+        },
       },
-      description: {
-        value: identifiedPlace.description,
-        isValid: true,
-      },
-    },
-    true
-  );
+      true
+    );
+    setIsLoading(false);
+  }, [setFormData, identifiedPlace]);
+
+  // Form submition
+  const placeUpdateSubmitHandler = (event) => {
+    event.preventDefault();
+    console.log(formState.inputs);
+  };
 
   // If there is no id
   if (!identifiedPlace) {
@@ -69,10 +95,13 @@ const UpdatePlace = () => {
     );
   }
 
-  const placeUpdateSubmitHandler = (event) => {
-    event.preventDefault();
-    console.log(formState.inputs);
-  };
+  if (isLoading) {
+    return (
+      <div className="center">
+        <h2>Loading...</h2>
+      </div>
+    );
+  }
 
   return (
     <form className="place-form" onSubmit={placeUpdateSubmitHandler}>
