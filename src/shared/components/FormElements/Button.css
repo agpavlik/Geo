@@ -1,12 +1,12 @@
 .button {
   font: inherit;
   padding: 0.5rem 1.5rem;
-  border: 1px solid #ff0055;
-  border-radius: 4px;
-  background: #ff0055;
-  color: white;
+  border: 1px solid #8d99ae;
+  border-radius: 2px;
+  background: #8d99ae;
+  color: #2b2d42;
   cursor: pointer;
-  margin-right: none;
+  margin: 0 0.5rem;
   text-decoration: none;
   display: inline-block;
 }
@@ -17,45 +17,48 @@
 
 .button:hover,
 .button:active {
-  background: #ff4382;
-  border-color: #ff4382;
+  background: #4b566a;
+  border-color: #4b566a;
+  color: white;
 }
 
 .button--inverse {
   background: transparent;
-  color: #ff0055;
+  color: #2b2d42;
+  border: 1px solid #2b2d42;
 }
 
 .button--inverse:hover,
 .button--inverse:active {
   color: white;
-  background: #ff0055;
+  background: #4b566a;
 }
 
 .button--danger {
-  background: #830000;
-  border-color: #830000;
+  background: #2b2d42;
+  border-color: #2b2d42;
+  color: white;
 }
 
 .button--danger:hover,
 .button--danger:active {
-  background: #f34343;
-  border-color: #f34343;
+  background: #4b566a;
+  border-color: #4b566a;
 }
 
 .button:disabled,
 .button:hover:disabled,
 .button:active:disabled {
-  background: #ccc;
-  color: #979797;
-  border-color: #ccc;
+  background: #ced4dd;
+  color: #8d99ae;
+  border-color: #ced4dd;
   cursor: not-allowed;
 }
 
-.button--small {
+/* .button--small {
   font-size: 0.8rem;
 }
 
 .button--big {
   font-size: 1.5rem;
-}
+} */

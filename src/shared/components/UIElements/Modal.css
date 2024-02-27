@@ -2,18 +2,18 @@
   z-index: 100;
   position: fixed;
   top: 22vh;
-  left: 10%;
-  width: 80%;
+  left: 5%;
+  width: 90%;
   background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
 }
 
 .modal__header {
   width: 100%;
   padding: 1rem 0.5rem;
-  background: #2a006e;
-  color: white;
+  background: #2b2d42;
+  color: #edf2f4;
 }
 
 .modal__header h2 {

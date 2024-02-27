@@ -84,7 +84,7 @@ const Auth = () => {
             "Content-Type": "application/json",
           }
         );
-        auth.login(responseData.user.id);
+        auth.login(responseData.userId, responseData.token);
       } catch (err) {} // do nothing if there is an error
     } else {
       // signup
@@ -101,7 +101,7 @@ const Auth = () => {
           formData
         );
 
-        auth.login(responseData.user.id);
+        auth.login(responseData.userId, responseData.token);
       } catch (err) {}
     }
   };
@@ -112,7 +112,6 @@ const Auth = () => {
       <Card className="authentication">
         {isLoading && <LoadingSpinner asOverlay />}
         <h2>Login Required</h2>
-        <hr />
         <form onSubmit={authSubmitHandler}>
           {!isLoginMode && (
             <Input

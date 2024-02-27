@@ -42,7 +42,9 @@ const MainNavigation = (props) => {
           <span />
         </button>
         <h1 className="main-navigation__title">
-          <Link to="/">YourPlaces</Link>
+          <Link to="/">
+            <img src="../../public/world.png" alt="Logo" />
+          </Link>
         </h1>
         <nav className="main-navigation__header-nav">
           <NavLinks />
