@@ -20,8 +20,8 @@ const UpdatePlace = () => {
   const auth = useContext(AuthContext);
   const { isLoading, error, sendRequest, clearError } = useHttpClient();
   const [loadedPlace, setLoadedPlace] = useState();
-  const history = useHistory();
   const placeId = useParams().placeId;
+  const history = useHistory();
 
   const [formState, inputHandler, setFormData] = useForm(
     {
@@ -76,6 +76,7 @@ const UpdatePlace = () => {
         }),
         {
           "Content-Type": "application/json",
+          Authorization: "Bearer " + auth.token,
         }
       );
       history.push("/" + auth.userId + "/places");
